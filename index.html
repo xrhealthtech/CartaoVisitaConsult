@@ -121,6 +121,29 @@
       color: var(--text-muted);
       margin-top: 10px;
     }
+
+    .tip-box {
+      background: rgba(249, 115, 22, 0.1);
+      border: 1px solid rgba(249, 115, 22, 0.3);
+      color: #ffedd5;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      line-height: 1.4;
+    }
+
+  .tip-box svg {
+    color: var(--accent);
+   flex-shrink: 0;
+  }
+
+  .tip-box strong {
+    color: #ffffff;
+  }
+
   </style>
 </head>
 <body>
@@ -133,7 +156,7 @@
       <p class="title">Consultoria em Biomecânica</p>
     </div>
 
-    <!-- Links e Ações -->
+<!-- Links e Ações -->
     <div class="actions">
       <!-- Gera o contato direto na agenda -->
       <button class="btn btn-primary" onclick="generateVCard()">
@@ -150,15 +173,28 @@
       <a class="btn btn-secondary" href="Cardapio.html">
         Serviços e Consultoria
       </a>
+
+      <!-- Instagram -->
+      <a class="btn btn-secondary" href="https://instagram.com/seu_perfil" target="_blank" rel="noopener">
+        Siga no Instagram
+      </a>
       
-      <!-- Currículo Lattes / Acadêmico -->
-      <a class="btn btn-secondary" href="http://lattes.cnpq.br/0791553640600604" target="_blank" rel="noopener">
-        Currículo Lattes
+      <!-- Sobre / Lattes -->
+      <a class="btn btn-secondary" href="sobreTulio.html" target="_blank" rel="noopener">
+        Sobre o Dr. Tulio
       </a>
     </div>
 
-    <div class="footer">
-      Toque em "Salvar na Agenda" para adicionar aos contatos.
+    
+
+    <!-- Dica de instrução -->
+    <div class="tip-box">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" y1="16" x2="12" y2="12"></line>
+        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+      </svg>
+      <span>Toque em <strong>"Salvar na Agenda"</strong> para baixar o contato.</span>
     </div>
   </div>
 
@@ -172,7 +208,7 @@
         title: "Consultor em Biomecânica",
         phone: "+5538999343321",
         email: "tuliofisiomec@gmail.com",
-        url: "https://seusite.com.br"
+        url: "https://xrhealthtech.github.io/CartaoVisitaConsult/"
       };
 
       const vcard = [
@@ -185,6 +221,7 @@
         `TEL;TYPE=CELL,VOICE:${contactData.phone}`,
         `EMAIL;TYPE=WORK,INTERNET:${contactData.email}`,
         `URL:${contactData.url}`,
+        `NOTE:Acesse o catálogo de serviços: ${contactData.url}`,
         "END:VCARD"
       ].join("\r\n");
 
@@ -197,7 +234,5 @@
       document.body.removeChild(link);
     }
   </script>
-</body>
-</html>
 </body>
 </html>
